@@ -20,16 +20,14 @@ const SignInForm = () => {
     setFormFields(defaultFormFields)
   }
 
-  const signInwithGoogle = async () => {
-    const { user } = await signInWithGooglePopup()
-    await createUserDocumentFromAuth(user)
+  const signInWithGoogle = async () => {
+    await signInWithGooglePopup()
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const response = await creatAuthUserWithEmailAndPassword(email, password)
-      console.log(' response', response)
+      const { user } = await creatAuthUserWithEmailAndPassword(email, password)
       resetFormFields()
     } catch (error) {
       switch (error.code) {
@@ -59,7 +57,7 @@ const SignInForm = () => {
         <FormInput label="Password" type="password" required onChange={handleChange} name="password" value={password} />
         <div className="buttons-container">
           <Button type="submit">Sign In</Button>
-          <Button type="button" onCLick={signInwithGoogle} buttonType="google">
+          <Button type="button" onCLick={signInWithGoogle} buttonType="google">
             Sign In With Google
           </Button>
         </div>
