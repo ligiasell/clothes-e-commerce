@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Check the website!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Clothes E-commerce](https://shiny-salmiakki-637e19.netlify.app).
 
 ## Available Scripts
 
